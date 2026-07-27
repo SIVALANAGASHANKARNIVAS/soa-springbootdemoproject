@@ -22,11 +22,8 @@ public class PatientServiceImpl implements PatientService
 		return repo.save(patient);
 	}
 
-	@Override
-	public List<Patient> DisplayAllPatients() 
-	{
-		return repo.findAll();
-	}
+	
+	
 
 	@Override
 	public Patient updatePatient(Patient p) 
@@ -74,6 +71,24 @@ public class PatientServiceImpl implements PatientService
 	public List<Patient> displayPatientsByGender(String gender)
 	{
 		return repo.findByGender(gender);
+	}
+
+
+
+
+	@Override
+	public List<Patient> displayAllPatients() 
+	{
+		return repo.findAll();
+	}
+
+
+
+
+	@Override
+	public Long displayPatientCount() 
+	{
+		return repo.count();
 	}
 	
 }
